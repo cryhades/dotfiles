@@ -1,0 +1,350 @@
+
+#---Principal
+
+set 	$mod 	Mod4
+font 	pango:DS-Digital
+
+#---Lock
+exec --no-startup-id betterlockscreen -w dim
+
+# Alternative (set last used background)
+exec 	--no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# NetworkManager
+
+exec 	--no-startup-id nm-applet
+
+#---Feh
+
+exec_always 	feh 	--randomize --bg-fill ~/.wall/nyar/*
+#---Picom
+
+exec 	picom 	-b -f
+
+#---Polybar
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------VARIABLES------------------------------------------------------------------#
+
+#-------------------------------------------------------VARIABLES-FOR-DUAL-WORKSPACES---------------------------------------------------------#
+
+set 	$ws1L 	"1"
+set 	$ws1R 	"2"
+set 	$ws2L 	"3"
+set 	$ws2R 	"4"
+set 	$ws3L 	"5"
+set 	$ws3R 	"6"
+set 	$ws4L 	"7"
+set 	$ws4R 	"8"
+set 	$ws5L 	"9"
+set 	$ws5R 	"10"	
+
+#-----------------------------------------------------------------WORKSPACES------------------------------------------------------------------#
+
+set 	$ws1 	"1"
+set 	$ws2 	"2"
+set 	$ws3 	"3"
+set 	$ws4 	"4"
+set 	$ws5 	"5"
+set 	$ws6 	"6"
+set 	$ws7 	"7"
+set 	$ws8 	"8"
+set 	$ws9 	"9"
+set 	$ws10 	"10"
+
+#-----------------------------------------------------------------PULSE-AUDIO-----------------------------------------------------------------#
+
+set 		$refresh_i3status 	killall 	-SIGUSR1 i3status
+
+#----------------------------------------------------------------COLORS-----------------------------------------------------------------------#
+
+set 	$colorPrimary 		#ffb200
+set 	$colorPrimaryDark 	#ff8000
+set 	$colorSecondary 	#ff6500
+set 	$colorSecondaryDark 	#ff4e00
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#----------------------------------------------------------------GAPS-------------------------------------------------------------------------#
+
+for_window 	[class=".*"] 	border pixel 1
+
+gaps 	inner 	8
+gaps 	outer 	4
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#---------------------------------------------------------------MODES-------------------------------------------------------------------------#
+
+#---------------------------------------------------------------RESIZE------------------------------------------------------------------------#
+
+
+mode "resize" {
+        bindsym 	Left 		resize shrink 		width 1 px or 1 ppt
+        bindsym 	Down 		resize grow 		height 1 px or 1 ppt
+        bindsym 	Up 		resize shrink 		height 1 px or 1 ppt
+        bindsym 	Right 		resize grow 		width 1 px or 1 ppt
+
+        bindsym 	Return 		mode 			"default"
+        bindsym 	Escape 		mode 			"default"
+        bindsym 	$mod+r 		mode 			"default"
+}
+
+#--------------------------------------------------------------Launcher-----------------------------------------------------------------------#
+
+mode "launcher" {
+        bindsym 	f 		exec 		firefox
+	bindsym 	c 		exec 		google-chrome-stable
+	bindsym 	d 		exec 		firefox-developer-edition
+
+        bindsym 	Escape 		mode 		"default"
+	bindsym 	Return 		mode 		"default"
+}
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#---------------------------------------------------------------Shortkeys---------------------------------------------------------------------#
+
+#---Brightness
+
+#bindsym XF86MonBrightnessUp 	exec 	xbacklight -inc %10
+#bindsym XF86MonBrightnessDown 	exec 	xbacklight - 10
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#---PulseAudio.
+
+bindsym XF86AudioRaiseVolume 	exec --no-startup-id pactl set-sink-volume 	@DEFAULT_SINK@ +1% && 		$refresh_i3status
+bindsym XF86AudioLowerVolume 	exec --no-startup-id pactl set-sink-volume 	@DEFAULT_SINK@ -1% && 		$refresh_i3status
+bindsym XF86AudioMute 		exec --no-startup-id pactl set-sink-mute 	@DEFAULT_SINK@ toggle && 	$refresh_i3status
+bindsym XF86AudioMicMute 	exec --no-startup-id pactl set-source-mute 	@DEFAULT_SOURCE@ toggle && 	$refresh_i3status
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#------Output WS------#
+
+##------Output LVDS------#
+
+workspace 	$ws1 		output 		LVDS
+workspace 	$ws3 		output 		LVDS 
+workspace 	$ws5 		output 		LVDS  
+workspace 	$ws7 		output 		LVDS  
+workspace 	$ws9 		output 		LVDS  
+   
+#------Output VGA------# 
+
+workspace 	$ws2 		output 		VGA-0
+workspace 	$ws4 		output 		VGA-0
+workspace 	$ws6 		output 		VGA-0 
+workspace 	$ws8 		output 		VGA-0
+workspace 	$ws10 		output 		VGA-0
+   
+#---------LAYOUT-------# 
+
+#---Output-LVDS---#
+
+workspace 	$ws1L		output 		LVDS  
+workspace 	$ws2L		output 		LVDS  
+workspace 	$ws3L		output 		LVDS  
+workspace 	$ws4L		output 		LVDS  
+workspace 	$ws5L		output 		LVDS  
+
+#---Output-VGA---#
+
+workspace 	$ws1R		output 		VGA-0
+workspace 	$ws2R		output 		VGA-0
+workspace 	$ws3R		output 		VGA-0
+workspace 	$ws4R		output 		VGA-0
+workspace 	$ws5R		output 		VGA-0
+
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#------Assign WS------#
+
+assign 		[class="firefox-developer-edition"] 	$ws10
+assign 		[class="firefox"] 			$ws10
+assign 		[class="chrome"] 			$ws9
+assign 		[class="obs"] 				$ws6
+assign 		[class="Thunar"] 			$ws7
+assign 		[class="Font Manager"] 			$ws8
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#---ShortCuts---
+#---FirstLine---
+
+bindsym 	$mod+q 			kill
+bindsym 	$mod+w 			layout 		tabbed
+bindsym 	$mod+e 			layout 		toggle 		split
+bindsym 	$mod+r 			mode 		resize
+bindsym 	$mod+t 			split 		toggle
+bindsym 	$mod+y 			workspace 	$ws4L, 		workspace 	$ws4R
+bindsym 	$mod+u 			workspace 	$ws3L, 		workspace 	$ws3R
+bindsym 	$mod+i 			workspace 	$ws1L, 		workspace 	$ws1R
+bindsym 	$mod+o 			workspace 	$ws2L, 		workspace 	$ws2R
+bindsym 	$mod+p 			workspace 	$ws5L, 		workspace 	$ws5R
+
+#--SHIFT--
+
+#bindsym 	$mod+Shift+q
+#bindsym 	$mod+Shift+w
+bindsym 	$mod+Shift+e 		exec 	"i3-nagbar -t warning -m 'Do you want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym 	$mod+Shift+r 		restart
+#bindsym 	$mod+Shift+t
+#bindsym 	$mod+Shift+y
+#bindsym 	$mod+Shift+u
+#bindsym 	$mod+Shift+i
+#bindsym 	$mod+Shift+o
+#bindsym 	$mod+Shift+p
+
+#---SecondLine
+
+bindsym 	$mod+a 			focus 		parent
+bindsym 	$mod+s 			layout 		stacking
+bindsym 	$mod+d 			exec 		--no-startup-id 	i3-dmenu-desktop
+bindsym 	$mod+f 			fullscreen 	toggle
+#bindsym 	$mod+g
+bindsym 	$mod+h 			focus 		left
+bindsym 	$mod+j 			focus 		down
+bindsym 	$mod+k 			focus 		up
+bindsym 	$mod+l 			focus 		right
+bindsym 	$mod+ntilde 		split 		toggle
+
+#--Shift--
+
+#bindsym 	$mod+Shift+a
+#bindsym 	$mod+Shift+s
+#bindsym 	$mod+Shift+d
+#bindsym 	$mod+Shift+f
+#bindsym 	$mod+Shift+g
+bindsym 	$mod+Shift+h 		split 		h
+#bindsym 	$mod+Shift+k
+bindsym 	$mod+Shift+l 		mode 		launcher
+#bindsym 	$mod+Shift+ntilde
+
+#---ThirdLine
+
+bindsym 	$mod+z			gaps 		outer current plus 	2
+#bindsym 	$mod+x
+#bindsym 	$mod+c
+bindsym 	$mod+v 			split 		v
+#bindsym 	$mod+b
+#bindsym 	$mod+n
+#bindsym 	$mod+m 			 		
+
+#--Shift--
+
+bindsym 	$mod+Shift+z		gaps 		outer current minus 	2
+bindsym 	$mod+Shift+x 		exec 		betterlockscreen -l dim
+bindsym 	$mod+Shift+c 		reload
+#bindsym 	$mod+Shift+v
+#bindsym 	$mod+Shift+b
+#bindsym 	$mod+Shift+n
+#bindsym 	$mod+Shift+m
+
+#---Others...
+
+bindsym 	$mod+Return 		exec 		alacritty
+bindsym 	$mod+space 		focus 		mode_toggle
+bindsym 	$mod+Right 		focus		right
+bindsym 	$mod+Left 		focus		left
+bindsym 	$mod+Up 		focus		up
+bindsym 	$mod+Down 		focus 		down
+
+#---switch to workspace
+
+bindsym 	$mod+1 			workspace 	$ws1
+bindsym 	$mod+2 			workspace 	$ws2
+bindsym 	$mod+3 			workspace 	$ws3
+bindsym 	$mod+4 			workspace 	$ws4
+bindsym 	$mod+5 			workspace 	$ws5
+bindsym 	$mod+6 			workspace 	$ws6
+bindsym 	$mod+7 			workspace 	$ws7
+bindsym 	$mod+8 			workspace 	$ws8
+bindsym 	$mod+9 			workspace 	$ws9
+bindsym 	$mod+0 			workspace 	$ws10
+
+#--Shift--
+
+bindsym 	$mod+Shift+Return 	exec 		kitty
+bindsym 	$mod+Shift+Left 	move 		left
+bindsym 	$mod+Shift+Down 	move 		down
+bindsym 	$mod+Shift+Up 		move 		up
+bindsym 	$mod+Shift+Right 	move 		right
+bindsym 	$mod+Shift+space 	floating toggle
+
+# move focused container to workspace
+
+bindsym 	$mod+Shift+1 		move 		container to 		workspace 		$ws1
+bindsym 	$mod+Shift+2 		move 		container to 		workspace 		$ws2
+bindsym 	$mod+Shift+3 		move 		container to 		workspace 		$ws3
+bindsym 	$mod+Shift+4 		move 		container to 		workspace 		$ws4
+bindsym 	$mod+Shift+5 		move 		container to 		workspace 		$ws5
+bindsym 	$mod+Shift+6 		move 		container to 		workspace 		$ws6
+bindsym 	$mod+Shift+7 		move 		container to 		workspace 		$ws7
+bindsym 	$mod+Shift+8 		move 		container to		workspace 		$ws8
+bindsym 	$mod+Shift+9 		move 		container to 		workspace 		$ws9
+bindsym 	$mod+Shift+0 		move 		container to 		workspace 		$ws10
+
+#------ALT------#
+
+#---FirstLine---
+
+bindsym 	mod1+e			exec 		openshot-qt
+
+#---SecondLine---
+
+bindsym 	mod1+s			exec 		simplescreenrecorder
+bindsym 	mod1+f			exec 		firefox
+bindsym 	mod1+shift+f		exec 		firefox-developer-edition
+
+#---Others---
+
+bindsym 	mod1+space 		exec 		rofi -show run
+bindsym 	mod+Tab 		exec 		rofi -show window
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------COLORS---------------------------------------------------------------------#
+
+  # class                 border 	 	backgr. 	text    indicator 		child_border
+client.focused 		$colorPrimaryDark $colorPrimaryDarkary 	#ffffff $colorSecondaryDark   $colorPrimaryDarkdary
+client.focused_inactive #DBC200			#DBC200 	#ffffff $colorPrimaryDark   	#DBC200
+client.unfocused        #DBC200 		#DBC200 	#888888 #AD9900   		#DBC200
+client.urgent           #2f343a 		#900000 	#ffffff #900000   		#900000
+client.placeholder      #000000 		#0c0c0c 	#ffffff #000000   		#0c0c0c
+client.background       #ffffff
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------BAR----------------------------------------------------------------------#
+
+#bar {
+#	font pango: alarmclock, NotoColorEmoji
+#	position 	top
+#font pango alarmclock NotoEmoji     
+#        status_command 	i3blocks -c /home/crash/.config/i3blocks/i3blocks.conf
+#	i3bar_command 	i3bar --transparency
+#	tray_output primary
+#	strip_workspace_numbers yes
+#	separator_symbol "|"
+#	workspace_buttons yes
+#	height 22
+#	  colors {
+#	    statusline    	#ffffff
+#    background    	#alefe41A
+#	    separator     	#000000
+#
+#	       #                BORDER  	BACKGROUND 	TEXT
+#	    focused_workspace   #FF5794 	#AA7DFC4D 	#B2E64C
+#	    inactive_workspace  #FF5794 	#00000033 	#dddddd
+#	    active_workspace    #fd5ff0 	#00000033 	#ffffff
+#	    urgent_workspace    #b71c1c 	#b71c1c 	#000000
+#	    binding_mode        #b71c1c 	#b71c1c 	#000000
+ # }
+#	}
+
+#---------------------------------------------------------------------------------------------------------------------------------------------#
+#---------------------------------------------------------------------------------------------------------------------------------------------#
