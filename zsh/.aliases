@@ -1,4 +1,4 @@
-#---------------------------------------------------------------------LINUX-SYS---------------------------------------------------------------------#
+#-----------------------------------------------------------------LINUX-SYS---------------------------------------------------------------------#
 
 alias a='cd'
 alias .='cd ..'
@@ -15,7 +15,7 @@ alias install='sudo pacman -S'
 alias update='sudo pacman -Sy'
 alias upgrade='sudo pacman -Syu'
 
-#------------------------------------------------------------------------GIT------------------------------------------------------------------------#
+#--------------------------------------------------------------------GIT------------------------------------------------------------------------#
 
 alias gd='git diff'
 alias gchk='git checkout -- '
@@ -23,13 +23,13 @@ alias gi='git init'
 alias ga='git add'
 alias ga.='git add .'
 alias gs='git status'
-alias gc='git commit'
+alias gc='git commit -m'
 alias gb='git branch'
 alias gch='git checkout'
 alias gps='git push -u origin'
 alias ghpsch='git remote add origin https://github.com/cryhades/'
 
-#--------------------------------------------------------------------CONFIG-FILES--------------------------------------------------------------------#
+#---------------------------------------------------------------CONFIG-FILES--------------------------------------------------------------------#
 
 alias i3c='$EDITOR $HOME/.config/i3/config'
 alias zshc='$EDITOR ~/.zshrc'
@@ -40,17 +40,26 @@ alias vimc='$EDITOR ~/.vimrc'
 alias nvimc='$EDITOR ~/.config/nvim/init.vim'
 alias dunstc='$EDITOR $HOME/.config/dunst/dunstrc'
 
-#---------------------------------------------------------------------DIRECTORIES-------------------------------------------------------------------#
+#-----------------------------------------------------------------DIRECTORIES-------------------------------------------------------------------#
 
 alias conf='cd ~/.config'
+alias vimg='cd ~/.vimgit'
+alias dotf='cd ~/.dotfiles'
 alias angela='cd ~/school/web/angela'
 alias pablo='cd ~/school/web/JuanPablo'
-alias vimg='cd ~/.vimgit'
 alias snips='cd ~/.vimsnips/'
 
-#-----------------------------------------------------------------------PROGRAMS--------------------------------------------------------------------#
+#-------------------------------------------------------------------PROGRAMS--------------------------------------------------------------------#
 
 alias n='nvim'
 alias py='python'
 alias pi='pip install'
 alias piu='pip uninstall'
+
+#-------------------------------------------------------------------WEB-DEVELOPMENT-------------------------------------------------------------#
+
+alias mh='n index.html'
+alias mc='n styles.css'
+alias mn='n normalize.css'
+
+

@@ -36,7 +36,7 @@ inoremap 	" ""<Esc>i
 "#----------------------------------------------------------------VIMSNIPS-----------------------------------------------------------------#"
 
 nmap 		<Leader>ht 		:-1read $HOME/.vimsnips/.skeleton.html<CR>
-nmap 		<Leader>rd 		:-1read $HOME/.vimsnips/.css.html<CR>
+nmap 		<Leader><Leader>st 	:-1read $HOME/.vimsnips/.css.html<CR>
 nmap 		<Leader><Leader>no 	:-1read $HOME/.vimsnips/.normalize.html<CR>
 
 "#----------------------------------------------------------------M-QUERY------------------------------------------------------------------#"
