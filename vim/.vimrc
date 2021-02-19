@@ -65,6 +65,7 @@ nmap 		<Leader>q 		:q<CR>
 nmap 		<Leader>bn 		:bnext<CR>
 nmap 		<Leader>bb 		:bprevious<CR>
 nmap 		<Leader>wq 		:wq<CR>
+nmap 		<Leader>qa 		:q!<CR>
 
 "-----------------------------------------------------------------PLUGINS------------------------------------------------------------------#"
 
