@@ -1,0 +1,16 @@
+call plug#begin('/vim/plugged')
+
+Plug 'Yggdroot/indentLine'
+Plug 'PotatoesMaster/i3/vim/syntax'
+Plug 'scrooloose/nerdtree'
+Plug 'easymotion/vin-easymotion'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ap/vim-css-color'
+Plug 'gko/vim-coloresque'
+Plug 'tpope/vim-surronud'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+call plug#end()

@@ -1,5 +1,6 @@
 #-----------------------------------------------------------------LINUX-SYS---------------------------------------------------------------------#
 
+alias l='ls'
 alias a='cd'
 alias .='cd ..'
 alias ..='cd ../..'
@@ -8,8 +9,8 @@ alias la='lsd -la'
 alias ls='lsd --color=auto'
 alias clx='clear'
 alias cl='clear -x'
-alias mk='mkdir'
-alias mkd='mkdir -p'
+alias mkf='touch'
+alias mkd='mkdir'
 alias rb='reboot'
 alias sd='shutdown now'
 alias install='sudo pacman -S'
@@ -49,6 +50,7 @@ alias dotf='cd ~/.dotfiles'
 alias angela='cd ~/school/web/angela'
 alias pablo='cd ~/school/web/JuanPablo'
 alias snips='cd ~/.vimsnips/'
+alias wrk='cd ~/work/charles'
 
 #-------------------------------------------------------------------PROGRAMS--------------------------------------------------------------------#
 

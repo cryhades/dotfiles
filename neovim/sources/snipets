@@ -1,0 +1,18 @@
+"#----------------------------------------------------------------VIMSNIPS-----------------------------------------------------------------#"
+
+nmap 		<Leader>ht 		:-1read $HOME/.vimsnips/.skeleton.html<CR>
+nmap 		<Leader><Leader>st 	:-1read $HOME/.vimsnips/.css.html<CR>
+nmap 		<Leader><Leader>no 	:-1read $HOME/.vimsnips/.normalize.html<CR>
+
+"#----------------------------------------------------------------M-QUERY------------------------------------------------------------------#"
+
+nmap 		<Leader>m3 		:-1read $HOME/.vimsnips/mquery/.mquerie320.html<CR>
+nmap 		<Leader>m4 		:-1read $HOME/.vimsnips/mquery/.mquerie480.html<CR>
+nmap 		<Leader>m6 		:-1read $HOME/.vimsnips/mquery/.mquerie600.html<CR>
+nmap 		<Leader>m7 		:-1read $HOME/.vimsnips/mquery/.mquerie768.html<CR>
+nmap 		<Leader>m9 		:-1read $HOME/.vimsnips/mquery/.mquerie900.html<CR>
+nmap 		<Leader>m1 		:-1read $HOME/.vimsnips/mquery/.mquerie1024.html<CR>
+nmap 		<Leader>m2 		:-1read $HOME/.vimsnips/mquery/.mquerie1200.html<CR>
+nmap 		<Leader>mq 		:-1read $HOME/.vimsnips/mquery/.mquerie.html<CR>
+
+
