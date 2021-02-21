@@ -55,6 +55,7 @@ alias wrk='cd ~/work/charles'
 #-------------------------------------------------------------------PROGRAMS--------------------------------------------------------------------#
 
 alias n='nvim'
+alias f='vifm'
 alias py='python'
 alias pi='pip install'
 alias piu='pip uninstall'
