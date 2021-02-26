@@ -85,6 +85,12 @@ Plug 		'tpope/vim-surround'
 Plug 		'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 		'prettier/vim-prettier'
 
+"JS-Eco"
+
+Plug 		'yuezk/vim-js'
+Plug 		'maxmellon/vim-jsx-pretty'
+Plug 		'dgraham/vim-eslint'
+
 "Themes"
 
 Plug 		'morhetz/gruvbox'
