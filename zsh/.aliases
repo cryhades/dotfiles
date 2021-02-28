@@ -1,6 +1,7 @@
 #------------------------------------------------------------------PACMAN-----------------------------------------------------------------------#
 #
 alias 	install='sudo pacman -S'
+alias 	installnc='sudo pacman -S --noconfirm'
 alias 	update='sudo pacman -Sy'
 alias 	upgrade='sudo pacman -Syu'
 alias 	uninstall='sudo pacman -R' 	# Elimina solo el paquete.
@@ -58,10 +59,12 @@ alias 	pablo='cd ~/school/web/JuanPablo'
 alias 	jsvic='cd ~/school/js/victor'
 alias 	snips='cd ~/.vimsnips/'
 alias 	wrk='cd ~/work/charles'
+alias 	WwW='cd /srv/http/www'
 
 #-------------------------------------------------------------------PROGRAMS--------------------------------------------------------------------#
 
 alias 	n='nvim'
+alias 	sn='sudo nvim'
 alias 	f='vifm'
 alias 	nf='neofetch'
 alias 	py='python'
@@ -71,7 +74,12 @@ alias 	piu='pip uninstall'
 #-------------------------------------------------------------------WEB-DEVELOPMENT-------------------------------------------------------------#
 
 alias 	mh='n index.html'
+alias 	mp='n index.php'
 alias 	mc='n styles.css'
 alias 	mn='n normalize.css'
     
+#-------------------------------------------------------------------WEB-DEVELOPMENT-------------------------------------------------------------#
 
+alias 	stapache='sudo systemctl status httpd'
+alias 	enapache='sudo systemctl enable httpd'
+alias 	rtapache='sudo systemctl restart httpd'

@@ -207,16 +207,16 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-ws-icon-0 = 1;🧠 %{F#0073ff} %{F-}%{F#FF69CA}%{F-} 🧠
-ws-icon-1 = 2;🧠 %{F#ff3700} %{F-}%{F#ffe100}%{F-} 🧠
-ws-icon-2 = 3;%{F#7325f9} %{F-}%{F#0eb000} %{F-} %{F#ff6347}%{F-}
-ws-icon-3 = 4;%{F#ffe100}%{F-}%{F#0073ff}%{F-}
-ws-icon-4 = 5;📙%{F#07cbf7}%{F-}
-ws-icon-5 = 6;%{F#07cbf7}%{F-}%{F#ab07f7} %{F-}%{F#f94802} %{F-}%{F#f94802}%{F-}
+ws-icon-0 = 1;🔮🦊🔮 
+ws-icon-1 = 2;🧠 %{F#ff3700} %{F-}%{F#3ff} %{F-}%{F#ffe100}%{F-} 🧠
+ws-icon-2 = 3;🛸👽🛸
+ws-icon-3 = 4;🧠%{F#02a3f9}  %{F#ff6347}%{F-} 🧠
+ws-icon-4 = 5;🧠 📙 %{F#07cbf7} %{F-} 🧠
+ws-icon-5 = 6;🧠%{F#ffe100}  %{F-} 🧠
 ws-icon-6 = 7;🗄🗃🗄
 ws-icon-7 = 8;🛸👽🛸
 ws-icon-8 = 9;%{F#e80000} %{F-}%{F#ffe100} %{F-}%{F#e80000}%{F-}
-ws-icon-9 = 10;🔮🦊🔮
+ws-icon-9 = 10;🧠%{F#FF69CA}%{F-} %{F#0073ff}%{F-}🧠
 
 label-mode-padding = 2
 label-mode-foreground = #000

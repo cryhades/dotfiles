@@ -34,8 +34,8 @@ colors:
     style: "Beam"
 font:
   bold:
-    family: Hack
-  italic:
+    family: HurmitNF
+    italic:
     family: Hack
   normal:
     family: Hack

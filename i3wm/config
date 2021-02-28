@@ -164,9 +164,9 @@ workspace 	$ws5R		output 		VGA-0
 #---------------------------------------------------------------------------------------------------------------------------------------------#
 #------Assign WS------#
 
-assign 		[class="firefox-developer-edition"] 	$ws10
+assign 		[class="firefox-developer-edition"] 	$ws1
 assign 		[class="firefox"] 			$ws10
-assign 		[class="chrome"] 			$ws9
+assign 		[class="chrome"] 			$ws3
 assign 		[class="obs"] 				$ws6
 assign 		[class="Thunar"] 			$ws7
 assign 		[class="Font Manager"] 			$ws8
@@ -182,10 +182,10 @@ bindsym 	$mod+e 			layout 		toggle 		split
 bindsym 	$mod+r 			mode 		resize
 bindsym 	$mod+t 			split 		toggle
 bindsym 	$mod+y 			workspace 	$ws4L, 		workspace 	$ws4R
-bindsym 	$mod+u 			workspace 	$ws3L, 		workspace 	$ws3R
+bindsym 	$mod+u 			workspace 	$ws5L, 		workspace 	$ws5R
 bindsym 	$mod+i 			workspace 	$ws1L, 		workspace 	$ws1R
 bindsym 	$mod+o 			workspace 	$ws2L, 		workspace 	$ws2R
-bindsym 	$mod+p 			workspace 	$ws5L, 		workspace 	$ws5R
+bindsym 	$mod+p 			workspace 	$ws3L, 		workspace 	$ws3R
 
 #--SHIFT--
 

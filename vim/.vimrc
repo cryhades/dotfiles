@@ -1,5 +1,5 @@
-let 		mapleader = " "
-
+let mapleader =  " "
+ 
 set 		number
 set 		mouse=a
 set 		relativenumber
@@ -33,6 +33,7 @@ inoremap 	{ {}<Esc>i
 inoremap 	[ []<Esc>i
 inoremap 	< <><Esc>i
 inoremap 	' ''<Esc>i
+inoremap 	` `<Esc>i
 inoremap 	" ""<Esc>i
 
 "#------------------------------------------------------------------HTML-------------------------------------------------------------------#"
@@ -41,9 +42,13 @@ nmap 		<Leader>bot 		:-1read $HOME/.vimsnips/css/boton.html<CR>
 
 "#----------------------------------------------------------------VIMSNIPS-----------------------------------------------------------------#"
 
-nmap 		<Leader>ht 		:-1read $HOME/.vimsnips/html/.skeleton.html<CR>
-nmap 		<Leader><Leader>st 	:-1read $HOME/.vimsnips/css/.css.html<CR>
-nmap 		<Leader><Leader>no 	:-1read $HOME/.vimsnips/css/.normalize.html<CR>
+nmap 		<Leader>html		:-1read $HOME/.vimsnips/html/.skeleton.html<CR>
+nmap 		<Leader><Leader>css 	:-1read $HOME/.vimsnips/css/.css.html<CR>
+nmap 		<Leader><Leader>norm 	:-1read $HOME/.vimsnips/css/.normalize.html<CR>
+
+"#----------------------------------------------------------------PHP----------------------------------------------------------------------#"
+
+nmap  		<Leader><Leader>php 		:-1read $HOME/.vimsnips/php/php.html<CR>
 
 "#----------------------------------------------------------------M-QUERY------------------------------------------------------------------#"
 
@@ -64,7 +69,7 @@ nmap 		<Leader>w 		:w<CR>
 nmap 		<Leader>q 		:q<CR>
 nmap 		<Leader>bn 		:bnext<CR>
 nmap 		<Leader>bb 		:bprevious<CR>
-nmap 		<Leader>wq 		:wq<CR>
+nmap 		<Leader>x 		:wq<CR>
 nmap 		<Leader>qa 		:q!<CR>
 
 "-----------------------------------------------------------------PLUGINS------------------------------------------------------------------#"
@@ -170,10 +175,10 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
+  
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -252,7 +257,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
+
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
