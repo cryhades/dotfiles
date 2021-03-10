@@ -58,7 +58,7 @@ alias 	angela='cd ~/school/web/angela'
 alias 	pablo='cd ~/school/web/JuanPablo'
 alias 	jsvic='cd ~/school/js/victor'
 alias 	snips='cd ~/.vimsnips/'
-alias 	wrk='cd ~/work/charles'
+alias 	wrk='cd ~/work/personal/weedStore'
 alias 	WwW='cd /srv/http/www'
 
 #-------------------------------------------------------------------PROGRAMS--------------------------------------------------------------------#

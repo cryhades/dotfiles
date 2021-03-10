@@ -165,7 +165,7 @@ workspace 	$ws5R		output 		VGA-0
 #------Assign WS------#
 
 assign 		[class="firefox-developer-edition"] 	$ws1
-assign 		[class="firefox"] 			$ws10
+assign 		[class="firefox"] 			$ws1
 assign 		[class="chrome"] 			$ws3
 assign 		[class="obs"] 				$ws6
 assign 		[class="Thunar"] 			$ws7

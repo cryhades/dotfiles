@@ -1,4 +1,4 @@
-background_opacity: 0.75
+background_opacity: 0.88
 #https://github.com/eendroroy/alacritty-theme
 colors:
   # Default colors
@@ -29,7 +29,7 @@ colors:
     white:   '#b7cff9'
 
   cursor:
-    text: "#00ff00"
+    text: "#000000"
     cursor: "#00ff00"
     style: "Beam"
 font:
